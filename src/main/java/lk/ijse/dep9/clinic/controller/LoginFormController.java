@@ -1,10 +1,18 @@
 package lk.ijse.dep9.clinic.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import lk.ijse.dep9.clinic.security.SecurityContextHolder;
+import lk.ijse.dep9.clinic.security.User;
+import lk.ijse.dep9.clinic.security.UserRole;
 
+import java.io.IOException;
+import java.sql.*;
 import java.util.AbstractList;
 
 public class LoginFormController {
@@ -16,7 +24,7 @@ public class LoginFormController {
         btnLogin.setDefaultButton(true);
     }
 
-    public void btnLogin_OnAction(ActionEvent actionEvent) {
+    public void btnLogin_OnAction(ActionEvent actionEvent) throws ClassNotFoundException {
         String userName = txtUsername.getText();
         String passwordText = txtPassword.getText();
 
@@ -35,6 +43,47 @@ public class LoginFormController {
             txtPassword.requestFocus();
             txtPassword.selectAll();
             return;
+        }
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/medical_clinic", "root", "62290754@Ns")){
+            String sql = "SELECT role FROM User WHERE username='%s' AND password='%s'";
+            sql = String.format(sql,userName,passwordText);
+            Statement stm = connection.createStatement();
+            ResultSet resultSet = stm.executeQuery(sql);
+
+            if(resultSet.next()){
+                String role = resultSet.getString("role");
+                SecurityContextHolder.setPrinciple(new User(userName, UserRole.valueOf(role)));
+                Scene scene =null;
+                switch (role){
+                    case "Admin":
+                        scene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/AdminDashBoard.fxml")));
+                        break;
+                    case "Doctor":
+                        scene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/DoctorDashBoard.fxml")));
+                        break;
+                    default:
+                        scene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/ReceptionistDashBoard.fxml")));
+                }
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.centerOnScreen();
+                stage.show();
+
+
+
+            }else{
+                new Alert(Alert.AlertType.ERROR,"Invalid logic credentials").show();
+                txtUsername.requestFocus();
+                txtUsername.selectAll();
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,"Failed to connect with the Database, Try Again").show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
