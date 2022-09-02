@@ -1,2 +1,4 @@
-package lk.ijse.dep9.clinic.controller;public class AdminDashBoardController {
+package lk.ijse.dep9.clinic.controller;
+
+public class AdminDashBoardController {
 }

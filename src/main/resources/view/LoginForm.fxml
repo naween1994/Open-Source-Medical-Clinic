@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.LoginForm"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep9.clinic.controller.LoginFormController">
+   <children>
+      <Label layoutX="77.0" layoutY="83.0" text="Login Into Open Source medical Clinic">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="278.0" layoutY="134.0" text="Icon" />
+      <Label layoutX="260.0" layoutY="182.0" text="Username" />
+      <TextField fx:id="txtUsername" layoutX="211.0" layoutY="214.0" />
+      <Label layoutX="260.0" layoutY="253.0" text="password" />
+      <TextField fx:id="txtPassword" layoutX="211.0" layoutY="285.0" />
+      <Button fx:id="btnLogin" layoutX="258.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnLogin_OnAction" text="Login" />
+   </children>
 </AnchorPane>
