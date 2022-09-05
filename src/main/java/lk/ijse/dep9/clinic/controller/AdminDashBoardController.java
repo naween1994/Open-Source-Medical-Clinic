@@ -20,7 +20,14 @@ public class AdminDashBoardController {
         System.out.println(SecurityContextHolder.getPrinciple());
     }
 
-    public void btnProfileM_OnAction(ActionEvent actionEvent) {
+    public void btnProfileM_OnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        Parent container = FXMLLoader.load(this.getClass().getResource("/view/AdminProfileManagementForm.fxml"));
+        Scene scene = new Scene(container);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     public void btnViewRecords_OnAction(ActionEvent actionEvent) {
