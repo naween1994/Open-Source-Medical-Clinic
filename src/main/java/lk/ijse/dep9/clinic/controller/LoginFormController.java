@@ -86,6 +86,7 @@ public class LoginFormController {
                 stage.setScene(scene);
                 stage.centerOnScreen();
                 stage.show();
+                txtUsername.getScene().getWindow().hide();
 
             }else{
                 new Alert(Alert.AlertType.ERROR,"Invalid logic credentials").show();

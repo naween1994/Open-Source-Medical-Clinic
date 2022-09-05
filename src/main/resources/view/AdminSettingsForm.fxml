@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="513.0" prefWidth="738.0" style="-fx-background-color: #C9C9F1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep9.clinic.controller.AdminSettingsFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="78.0" layoutY="18.0" text="SETTINGS" AnchorPane.leftAnchor="78.0" AnchorPane.topAnchor="18.0">
+         <font>
+            <Font name="Cantarell Extra Bold" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="52.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@../image/MediCare.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="27.0" layoutY="87.0" spacing="15.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="87.0">
+         <children>
+            <JFXButton fx:id="btnHospitalFee" buttonType="RAISED" layoutX="10.0" layoutY="110.0" onAction="#btnHospitalFee_OnAction" prefHeight="39.0" prefWidth="163.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="Hospital Fee" textFill="WHITE">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDiscount" buttonType="RAISED" layoutX="10.0" layoutY="205.0" onAction="#btnDiscount_OnAction" prefHeight="39.0" prefWidth="163.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="Discount" textFill="WHITE">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnFields" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#btnFields_OnAction" prefHeight="39.0" prefWidth="163.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="Fields" textFill="WHITE">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnPassword" buttonType="RAISED" layoutX="10.0" layoutY="118.0" onAction="#btnPassword_OnAction" prefHeight="39.0" prefWidth="163.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnAbout" buttonType="RAISED" layoutX="10.0" layoutY="172.0" onAction="#btnAbout_OnAction" prefHeight="39.0" prefWidth="163.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="About" textFill="WHITE">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="pneContainer" layoutX="209.0" layoutY="88.0" prefHeight="400.0" prefWidth="500.0" style="-fx-border-width: 2; -fx-border-color: white;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="88.0" />
+      <Pane layoutX="78.0" layoutY="57.0" prefHeight="5.0" prefWidth="497.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="57.0" />
+   </children>
+</AnchorPane>
