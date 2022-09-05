@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep9.clinic.controller.AdminDashBoardController">
+<AnchorPane prefHeight="400.0" prefWidth="312.0" style="-fx-background-color: #C9C9F1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep9.clinic.controller.AdminDashBoardController">
    <children>
-      <Label layoutX="267.0" layoutY="25.0" text="Admin Form" />
+      <Label alignment="CENTER" layoutY="115.0" text="ADMIN DASHBOARD" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="Cantarell Extra Bold" size="23.0" />
+         </font></Label>
+      <ImageView fitHeight="87.0" fitWidth="74.0" layoutX="119.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/MediCare.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnProfileM" buttonType="RAISED" layoutX="68.0" layoutY="175.0" onAction="#btnProfileM_OnAction" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="Profile Management" textFill="WHITE" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="68.0">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnViewRecords" buttonType="RAISED" layoutX="68.0" layoutY="243.0" onAction="#btnViewRecords_OnAction" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="View Records" textFill="WHITE" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="68.0">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSettings" buttonType="RAISED" layoutX="68.0" layoutY="310.0" onAction="#btnSettings_OnAction" prefHeight="50.0" prefWidth="176.0" style="-fx-background-color: #8080FF; -fx-background-radius: 30;" text="Settings" textFill="WHITE" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="68.0">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

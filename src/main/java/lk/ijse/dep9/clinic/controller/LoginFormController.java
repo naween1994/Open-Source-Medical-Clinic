@@ -55,11 +55,10 @@ public class LoginFormController {
             ResultSet resultSet = stm.executeQuery(sql);*/
 
             //Prepared Statement
-            String sql = "SELECT role,password FROM User WHERE username?";
+            String sql = "SELECT role,password FROM User WHERE username=?";
             // ? is positional parameter
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,userName);
-            preparedStatement.setString(2,passwordText);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()){
@@ -87,8 +86,6 @@ public class LoginFormController {
                 stage.setScene(scene);
                 stage.centerOnScreen();
                 stage.show();
-
-
 
             }else{
                 new Alert(Alert.AlertType.ERROR,"Invalid logic credentials").show();
